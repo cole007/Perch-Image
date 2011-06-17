@@ -1,0 +1,10 @@
+	Perch on-the-fly image resizer
+	** CAUTION ** DIRTY PHP: use at own risk. 
+	Please add to, enhance, improve.
+	Cole Henley
+	@cole007
+	
+	17/06/2011
+	
+	Currently only limited to jpg and png image formats (otherwise will throw a 404)
+	Also pretty indiscriminate - will just crop images to specified height and width (centred along longest axis)
