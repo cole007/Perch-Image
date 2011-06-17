@@ -6,5 +6,7 @@
 	
 	17/06/2011
 	
-	Currently only limited to jpg and png image formats (otherwise will throw a 404)
-	Also pretty indiscriminate - will just crop images to specified height and width (centred along longest axis)
+	Limitations:
+	1) Currently only limited to jpg and png image formats (otherwise will throw a 404)
+	2) Also pretty indiscriminate - will just crop images to specified height and width (centred along longest axis)
+	3) Possibility (untested) that this method will likely leave legacy (resized) files on server when image is deleted via the CMS
