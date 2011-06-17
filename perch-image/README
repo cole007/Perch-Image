@@ -6,6 +6,15 @@
 	
 	17/06/2011
 	
+	Requirements:
+	1) Requires ability to set .htaccess
+ 	2) Requires GD libraries to be enabled
+ 	3) Permissions to write to image folder should be appropriate (although usually required in default Perch install)
+	
+	Instructions: 
+	1) Add the enclosed .htaccess and index.php files in the /perch/resources/ folder 
+	
+	
 	Limitations:
 	1) Currently only limited to jpg and png image formats (otherwise will throw a 404)
 	2) Also pretty indiscriminate - will just crop images to specified height and width (centred along longest axis)
