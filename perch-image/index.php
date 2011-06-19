@@ -52,18 +52,32 @@
 		
 		// if successful
 		if (isset($imageCopy)) {
-			// if landscape
-			if ($image[0] > $image[1]) {
-				$src_w = $image[1];
-				$src_h = $image[1] * $ratio;
+			$src_ratio = $image[1] / $image [0];
+			
+			// if landscape and aspect ratio too wide
+			if ($image[0] > $image[1] && $src_ratio > $ratio) {
+				$src_w = $image[0];
+				$src_h = $image[0] * $ratio;
 				$src_x = 0;
-				$src_y = ($src_w - $src_h) / 2;
-			// if portrait (or square)
+				$src_y = ($image[1] - $src_h) / 2;
+			// if landscape and aspect ratio too tall
+			} elseif ($image[0] > $image[1]) {
+				$src_w = $image[1] / $ratio;
+				$src_h = $image[1];
+				$src_x = ($image[0] - $src_w) / 2;
+				$src_y = 0;
+			// if portrait (or square) and aspect ratio too tall
+			} elseif ($image[1] > $image[0] && $src_ratio < $ratio) {
+				$src_w = $image[1] / $ratio;
+				$src_h = $image[1];
+				$src_x = ($image[0] - $src_w) / 2;
+				$src_y = 0;
+			// if portrait (or square) and aspect ratio too wide
 			} else {
 				$src_w = $image[0];
 				$src_h = $image[0] * $ratio;
 				$src_x = 0;
-				$src_y = ($src_w - $src_h) / 2;
+				$src_y = ($image[1] - $src_h) / 2;
 			}
 			
 			// create new image resource
