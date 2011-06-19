@@ -6,8 +6,6 @@
 		Please add to, enhance, improve.
 		Cole Henley
 		@cole007
-		
-		17/06/2011
 	*/
 
 	// get the URI
@@ -56,16 +54,16 @@
 		if (isset($imageCopy)) {
 			// if landscape
 			if ($image[0] > $image[1]) {
-				$src_w = $image[1] / $ratio;
-				$src_h = $image[1];
-				$src_x = ($src_w - $src_h) / 2;
-				$src_y = 0;
+				$src_w = $image[1];
+				$src_h = $image[1] * $ratio;
+				$src_x = 0;
+				$src_y = ($src_w - $src_h) / 2;
 			// if portrait (or square)
 			} else {
 				$src_w = $image[0];
 				$src_h = $image[0] * $ratio;
 				$src_x = 0;
-				$src_y = ($src_h - $src_w) / 2;
+				$src_y = ($src_w - $src_h) / 2;
 			}
 			
 			// create new image resource
