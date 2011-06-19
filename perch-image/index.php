@@ -43,7 +43,7 @@
 		$ratio = $hi / $wi;
 		
 		// if JPEG
-		if (eregi('jpeg$',$image['mime'])) {
+		if (eregi('(jpg|jpeg)$',$image['mime'])) {
 			$imageCopy = imagecreatefromjpeg($src_file);
 		// if PNG 
 		} elseif (eregi('png$',$image['mime'])) {
