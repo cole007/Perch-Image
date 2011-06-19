@@ -4,7 +4,7 @@
 	Cole Henley
 	@cole007
 	
-	17/06/2011
+	19/06/2011
 	
 	Requirements:
 	1) Requires ability to set .htaccess
@@ -19,3 +19,7 @@
 	1) Currently only limited to jpg and png image formats (otherwise will throw a 404)
 	2) Also pretty indiscriminate - will just crop images to specified height and width (centred along longest axis)
 	3) Possibility (untested) that this method will likely leave legacy (resized) files on server when image is deleted via the CMS
+	
+	To-Do:
+	1) Script to work with only one of height or width specified in URL
+	2) Roll out other image formats
