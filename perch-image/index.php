@@ -39,8 +39,6 @@
 		
 		// get source image size 
 		$image = getimagesize($src_file);
-		// calculate aspect ratio of src file
-		$ratio = $hi / $wi;
 		
 		// if JPEG
 		if (eregi('(jpg|jpeg)$',$image['mime'])) {
@@ -52,8 +50,15 @@
 		
 		// if successful
 		if (isset($imageCopy)) {
+			// calculate aspect ratio of src file
 			$src_ratio = $image[1] / $image [0];
 			
+			if ($hi == '') $hi = $wi / $src_ratio;
+			if ($wi == '') $wi = $hi * $src_ratio;
+			
+			// calculate aspect ratio of new file
+			$ratio = $hi / $wi;
+		
 			// if landscape and aspect ratio too wide
 			if ($image[0] > $image[1] && $src_ratio > $ratio) {
 				$src_w = $image[0];
